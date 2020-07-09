@@ -29,9 +29,9 @@
   },
   "scripts": {
     "webpack": "webpack --mode=development --config webpack.config.js",
-    "streamAudit": "node main.js streamAudit",
+    "streamAudit": "node main.js streamAudit && cp facilityList-allowlist-geocoded.json public/stations.json",
     "deploy": "rsync -avzr public/ ubuntu@satsuki.tv:/var/www/radio/",
-    "build": "npm run streamAudit && npm run webpack && cp src/index.html public/index.html && cp -r src/css public/ && cp facilityList-whitelist-geocoded.json public/stations.json",
+    "build": "npm run webpack && cp src/index.html public/index.html && cp -r src/css public/",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
