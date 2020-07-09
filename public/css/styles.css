@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: url('/metal.jpg');
+}
+
+.carbon {
+    font-family: t26-carbon, monospace;
+}
+
+.paralucent {
+    font-family: paralucent, sans-serif;
+}
+
+.paralucent-condensed {
+    font-family: paralucent-condensed, sans-serif;
+}
+
+.paralucent-stencil {
+    font-family: paralucent-stencil, sans-serif;
+}
+
+.clarendon {
+    font-family: clarendon-text-pro, serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.clarendon-bold {
+    font-family: clarendon-text-pro, serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+button {
+    display: inline-block;
+    border: none;
+    margin: 0;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+}
+
+button:focus {
+}
+
+button:active {
+    transform: scale(0.99);
+}

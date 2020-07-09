@@ -1,0 +1,52 @@
+{
+  "name": "internet-radio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "debounce": "^1.2.0",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.0",
+    "node-geocoder": "^3.27.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "safe-eval": "^0.4.1",
+    "styled-components": "^5.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "@babel/runtime": "^7.9.6",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-styled-components": "^1.10.7"
+  },
+  "scripts": {
+    "webpack": "webpack --mode=development --config webpack.config.js",
+    "streamAudit": "node main.js streamAudit",
+    "deploy": "rsync -avzr public/ ubuntu@satsuki.tv:/var/www/radio/",
+    "build": "npm run streamAudit && npm run webpack && cp src/index.html public/index.html && cp -r src/css public/ && cp facilityList-whitelist-geocoded.json public/stations.json",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "babel-plugin-styled-components",
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-transform-runtime"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
